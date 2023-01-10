@@ -32,7 +32,7 @@ export function ToyIndex() {
 
 
     return <section>
-        <h3>Toys store</h3>
+        <h3>Toys store!</h3>
 
         <ToyList
             toys={toys}

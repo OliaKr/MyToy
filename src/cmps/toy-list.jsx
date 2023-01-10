@@ -14,8 +14,7 @@ export function ToyList({ toys, onRemoveToy }) {
                     <button className="clean-btn fa-solid x btn"
 
                         onClick={() => { onRemoveToy(toy._id) }}>x</button>
-                    <button className="btn-details" ><Link to={`/toy/${toy._id}`}>details</Link></button>
-
+                    <button className="clean-btn btn" ><Link to={`/toy/${toy._id}`}>details</Link></button>
 
 
                 </div>

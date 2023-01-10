@@ -14,6 +14,7 @@ export const toyService = {
     remove,
     save,
     getDefaultFilter,
+    getEmptyToy,
 
 }
 

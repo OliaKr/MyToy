@@ -9,3 +9,16 @@
 
 
 }
+
+.preview-img {
+    height: 145px;
+}
+
+.preview-img img {
+    object-fit: contain;
+}
+
+.out-stock {
+    color: rgb(101, 186, 90);
+    font-weight: bold;
+}

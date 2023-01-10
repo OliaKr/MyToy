@@ -12,6 +12,8 @@ import { AppHeader } from './pages/app-header';
 import {ToyIndex} from './pages/toy-index';
 import { store } from './store/store';
 import { ToyDetails } from './pages/toy-details';
+import { ToyEdit } from './pages/toy-edit';
+import { GoogleMap } from './cmps/google-map';
 
 
 
@@ -33,6 +35,7 @@ function App() {
             <Route element={<AboutUs />} path="about" /> 
             <Route element={<ToyIndex />} path="/toy" />
             <Route element={<ToyDetails/>} path="/toy/:toyId" />
+            <Route element={<ToyEdit />} path="/toy/edit/toyId" />
             
 
 
