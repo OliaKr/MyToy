@@ -1,0 +1,32 @@
+header {
+    background: rgb(73, 195, 122);
+    border-bottom: 2px solid white;
+    color: aliceblue;
+    margin-bottom: 20px;
+}
+
+
+.app-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+}
+
+.app-header h3 {
+    font-family: Lato;
+}
+
+nav a {
+    margin: .5em;
+}
+
+nav a:active {
+    color: rgb(74, 142, 119);
+}
+
+nav a.active {
+    color: rgb(74, 142, 119);
+    font-weight: bold;
+    text-decoration: aliceblue;
+}
