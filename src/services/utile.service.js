@@ -8,6 +8,7 @@ export const utilService = {
     getMonthName,
     saveToStorage,
     loadFromStorage,
+    debounce,
 }
 
 function makeId(length = 6) {

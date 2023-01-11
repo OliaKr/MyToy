@@ -19,11 +19,26 @@ export const toyService = {
 }
 
 function getDefaultFilter() {
-    return { txt: '', label: '' }
+    return { txt: '', label: '', inStock:'', maxPrice:'' }
 }
 
-function query() {
+function query(filterBy = getDefaultFilter()) {
+
     return storageService.query(STORAGE_KEY)
+    .then(toys => {
+        if (filterBy.txt) {
+            const regex = new RegExp(filterBy.txt, 'i')
+            toys = toys.filter(toy => regex.test(toy.name))
+            
+        }
+        if (filterBy.maxPrice) {
+            toys = toys.filter(toy => toy.price <= toy.maxPrice)
+            
+        }
+        console.log(filterBy, toys);
+        return toys
+
+    })
 }
 
 function getById(toyId) {
