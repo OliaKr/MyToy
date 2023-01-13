@@ -4,11 +4,6 @@ import { useSelector } from 'react-redux'
 
 export function ToyList({ toys, onRemoveToy }) {
 
-   
-
-
-
-
     return <ul className="toys-list">
         {toys.map(toy =>
 

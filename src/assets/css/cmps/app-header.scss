@@ -1,5 +1,5 @@
 header {
-    background: rgb(73, 195, 122);
+    background: $clr2;
     border-bottom: 2px solid white;
     color: aliceblue;
     margin-bottom: 20px;
@@ -22,11 +22,11 @@ nav a {
 }
 
 nav a:active {
-    color: rgb(74, 142, 119);
+    color: $clr3;
 }
 
 nav a.active {
-    color: rgb(74, 142, 119);
+    color: $clr3;
     font-weight: bold;
     text-decoration: aliceblue;
 }

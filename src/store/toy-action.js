@@ -2,7 +2,7 @@ import { toyService } from "../services/toy-service.js";
 
 import { store, Store } from '../store/store.js';
 
-import {SET_TOYS, REMOVE_TOY, ADD_TOY, UPDATE_TOY, SET_FILTER} from '../store/toy.reducer.js';
+import {SET_TOYS, REMOVE_TOY, ADD_TOY, UPDATE_TOY, SET_FILTER, SET_SORT} from '../store/toy.reducer.js';
 
 export function loadToys(filterBy) {
     return toyService.query(filterBy)
@@ -50,4 +50,10 @@ export function saveToy(toy) {
 export function setFilter(filter) {
 
     return Promise.resolve(store.dispatch({type: SET_FILTER, filter}))
+}
+
+export function setSort(sort) {
+    console.log('sortxxx:', sort)
+
+    store.dispatch({ type: SET_SORT, sort })
 }

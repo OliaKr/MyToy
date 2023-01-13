@@ -31,6 +31,8 @@ export function ToyFilter({ onSetFilter }) {
     // }, [filterByToEdit])
 
     function handleChange({ target }) {
+
+     
         let { value, name: field, type } = target
         value = (type === 'number') ? +value : value
         dispatch({type: SET_FILTER, filter: {...filterBy, [field]: value}})
@@ -39,18 +41,18 @@ export function ToyFilter({ onSetFilter }) {
             // (prevFilter) => ({ ...prevFilter, [field]: value }))
     }
 
-    // function onSubmitFilter(ev) {
-    //    console.log('filter to edit', filterByToEdit);
-    //     ev.preventDefault()
-    //     onSetFilter(filterByToEdit)
-    // }
+    function onSubmitFilter(ev) {
+       console.log('filter to edit', filterBy);
+        ev.preventDefault()
+        onSetFilter(filterBy)
+    }
 
 
 
     return <section className="toy filter">
         <h2>Filter</h2>
 
-        <form  >
+        <form onSubmit={onSubmitFilter} >
             <label htmlFor="name">Toy name:</label>
             <input type="text"
                 id="name"

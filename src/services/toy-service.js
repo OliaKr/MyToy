@@ -19,27 +19,30 @@ export const toyService = {
 }
 
 function getDefaultFilter() {
-    return { txt: '', label: '', inStock:'', maxPrice:'' }
+    return { txt: '', label: '', inStock: '', maxPrice: '' }
 }
 
-function query(filterBy = getDefaultFilter()) {
+async function query(filterBy = getDefaultFilter()) {
+    try {
+        let toys = await storageService.query(STORAGE_KEY)
 
-    return storageService.query(STORAGE_KEY)
-    .then(toys => {
+        if(!toys) throw new Error('Error')
         if (filterBy.txt) {
             const regex = new RegExp(filterBy.txt, 'i')
             toys = toys.filter(toy => regex.test(toy.name))
-            
         }
         if (filterBy.maxPrice) {
             toys = toys.filter(toy => toy.price <= toy.maxPrice)
-            
         }
-        console.log(filterBy, toys);
+
         return toys
 
-    })
+    } catch (err) {
+
+        console.log('Had Error', err);
+    }
 }
+
 
 function getById(toyId) {
     return storageService.get(STORAGE_KEY, toyId)

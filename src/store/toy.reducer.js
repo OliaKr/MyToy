@@ -5,6 +5,8 @@ export const REMOVE_TOY = 'REMOVE_TOY'
 export const ADD_TOY = 'ADD_TOY'
 export const UPDATE_TOY = 'UPDATE_TOY'
 export const SET_FILTER ="SET_FILTER"
+export const SET_SORT = "SET_SORT"
+
 
 
 
@@ -34,6 +36,10 @@ export function toyReducer(state = initialState, action) {
 
         case SET_FILTER:
             return { ...state, filterBy: action.filter }
+
+            case SET_SORT:
+                return {...state, sortBy: action.sort }
+
 
         default:
             return state
