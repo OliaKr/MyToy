@@ -42,7 +42,7 @@ export function ToyFilter({ onSetFilter }) {
     }
 
     function onSubmitFilter(ev) {
-       console.log('filter to edit', filterBy);
+    
         ev.preventDefault()
         onSetFilter(filterBy)
     }

@@ -23,10 +23,10 @@ function getDefaultFilter() {
 }
 
 async function query(filterBy = getDefaultFilter()) {
+    let toys = await storageService.query(STORAGE_KEY)
     try {
-        let toys = await storageService.query(STORAGE_KEY)
 
-        if(!toys) throw new Error('Error')
+        
         if (filterBy.txt) {
             const regex = new RegExp(filterBy.txt, 'i')
             toys = toys.filter(toy => regex.test(toy.name))

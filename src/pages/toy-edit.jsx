@@ -13,6 +13,7 @@ export function ToyEdit() {
     const [toy, setToy] = useState(toyService.getEmptyToy())
     const { toyId } = useParams()
     const navigate = useNavigate()
+    const [toyName, setToyName] = useState('')
 
     useEffect(() => {
         if (!toyId) return
@@ -26,9 +27,10 @@ export function ToyEdit() {
 
     function handleChange({ target }) {
         let { value, type, name: field } = target
+        
         value = type === 'number' ? +value : value
         setToy((prevTodo) => ({ ...prevTodo, [field]: value }))
-
+        
     }
 
     function handleBooleanChange({ target }) {

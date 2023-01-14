@@ -39,6 +39,7 @@ export function saveToy(toy) {
     return toyService.save(toy)
         .then(savedToy => {
             store.dispatch({ type, toy: savedToy })
+            console.log('checking if toy was edited', toy)
             return savedToy
         })
         .catch(err => {

@@ -6,7 +6,7 @@ export function ToyPreview({ toy }) {
         <div className='preview-img'>
 
             
-        {toy.imgUrl && <img src={require(`../assets/img/${toy.imgUrl}`)} />}Ut
+        {toy.imgUrl && <img src={require(`../assets/img/${toy.imgUrl}`)} />}
         {!toy.imgUrl &&  <img src={`https://robohash.org/${toy.name}?set=set2`} alt="" /> }
         </div>
     </article>
